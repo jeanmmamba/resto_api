@@ -14,7 +14,7 @@ class OrderedController extends Controller
      */
     public function index()
     {
-        $ordered = Ordered::with(['article','user'])->orderBy('id', 'DESC')->paginate(8);
+        $ordered = Ordered::with(['article','user'])->orderBy('id', 'DESC')->get();
         return $this->reply(true,null, $ordered);
     }
 
@@ -29,8 +29,8 @@ class OrderedController extends Controller
     {
         $ordered=new Ordered();
         $ordered->qte = $request->qte;
-        $ordered->id_article = $request->id_article;
-        $orderedr->id_user = $request->id_user;
+        $ordered->article_id = 1;
+        $ordered->user_id = 1;
         $ordered->save();
         return$this->reply(true, 'enregistrement effectué avec succes',null);
     }

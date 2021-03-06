@@ -14,8 +14,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categorie = category::with(['article'])->orderBy('id', 'DESC')->paginate(8);
-        return $this->reply(true,null, $categorie);
+        $categorie = category::with(['article'])->orderBy('id', 'DESC')->get();
+        return $this->reply(true,'liste categorie', $categorie);
     }
 
     /**

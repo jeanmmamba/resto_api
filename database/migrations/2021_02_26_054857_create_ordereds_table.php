@@ -17,9 +17,7 @@ class CreateOrderedsTable extends Migration
             $table->id();
             $table->string('qte');
             $table->bigInteger('article_id');
-            $table->bigInteger('user_id');
-            $table->date('delivery_date');
-            $table->time('time');
+            $table->bigInteger('user_id');         
             $table->timestamps();
         });
     }

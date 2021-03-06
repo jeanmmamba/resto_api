@@ -16,8 +16,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $article = DB::table('articles')->paginate(8);
-        return  $article->toJson(JSON_PRETTY_PRINT);
+        $article = DB::table('articles')->get();
+        return   $this->reply(true,'liste service', $article);
     }
 
     /**

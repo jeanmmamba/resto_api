@@ -16,6 +16,7 @@ public function reply($success, $message=null, $data=null){
         'message'=>$message,     
         'data'=>$data,
     ];
-    return response()->json($response);
+    return response()->Json($response);
 }
+    
 }
